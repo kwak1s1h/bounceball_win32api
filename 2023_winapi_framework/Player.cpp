@@ -10,6 +10,7 @@
 #include "Collider.h"
 #include "Animator.h"
 #include "Animation.h"
+#include "Rigidbody.h"
 Player::Player()
 	: m_pTex(nullptr)
 {
@@ -37,6 +38,8 @@ Player::Player()
 		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
 	GetAnimator()->PlayAnim(L"Jiwoo_Front",true);
 
+	CreateRigidbody();
+
 	//// 오프셋 건드리기
 	//Animation* pAnim = GetAnimator()->FindAnim(L"Jiwoo_Front");
 	//// 하나만
@@ -53,31 +56,32 @@ Player::~Player()
 }
 void Player::Update()
 {
+	Rigidbody* pRigid = GetRigidbody();
 	Vec2 vPos = GetPos();
 
 	if (KEY_PRESS(KEY_TYPE::LEFT))
 	{
-		vPos.x -= 100.f * fDT;
+		pRigid->AddForce(Vec2(-200.f, 0.f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Left", true);
 	}
 	if (KEY_PRESS(KEY_TYPE::RIGHT))
 	{
-		vPos.x += 100.f * fDT;
+		pRigid->AddForce(Vec2(200.f, 0.f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Right", true);
 	}
 	if (KEY_PRESS(KEY_TYPE::UP))
 	{
-		vPos.y -= 100.f * fDT;
+		pRigid->AddForce(Vec2(0.f, -200.f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Back", true);
 	}
 	if (KEY_PRESS(KEY_TYPE::DOWN))
 	{
-		vPos.y += 100.f * fDT;
+		pRigid->AddForce(Vec2(0.f, 200.f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Front", true);
 	}
 	if(KEY_PRESS(KEY_TYPE::CTRL))
 		GetAnimator()->PlayAnim(L"Jiwoo_Attack", false, 1);
-	SetPos(vPos);
+	//SetPos(vPos);
 	GetAnimator()->Update();
 }
 
