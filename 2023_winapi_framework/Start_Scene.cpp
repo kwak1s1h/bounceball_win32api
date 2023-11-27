@@ -5,7 +5,7 @@
 
 void Start_Scene::Init()
 {
-	Button* btn = new Button(L"Play\nGame");
+	Button* btn = new Button(L"Play");
 	btn->SetPos((Vec2({ Core::GetInst()->GetResolution().x / 2, Core::GetInst()->GetResolution().y / 2 })));
 	btn->SetScale(Vec2(300.f, 75.f));
 	AddObject(btn, OBJECT_GROUP::UI);
