@@ -13,6 +13,9 @@ public:
 	void SetMass(float _fMass) { m_fMass = _fMass; }
 	const float& GetMass() const { return m_fMass; }
 
+	void SetVelocity(Vec2 _v) { m_vVelocity = _v; };
+	void SetMaxVelocity(float _speed) { m_fMaxSpeed = _speed; };
+
 
 	friend class Object;
 
@@ -28,5 +31,7 @@ private:
 	float m_fMass;
 
 	Vec2 m_vVelocity;
-	float m_fSpeed;
+	float m_fMaxSpeed;
+	float m_fFricCoeff;
+
 };
