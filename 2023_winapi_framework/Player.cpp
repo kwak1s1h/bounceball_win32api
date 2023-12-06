@@ -57,27 +57,16 @@ Player::~Player()
 void Player::Update()
 {
 	Rigidbody* pRigid = GetRigidbody();
-	Vec2 vPos = GetPos();
 
 	if (KEY_PRESS(KEY_TYPE::LEFT))
 	{
-		pRigid->AddForce(Vec2(-200.f, 0.f));
+		pRigid->AddForce(Vec2(-1000.f, 9.81f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Left", true);
 	}
 	if (KEY_PRESS(KEY_TYPE::RIGHT))
 	{
-		pRigid->AddForce(Vec2(200.f, 0.f));
+		pRigid->AddForce(Vec2(1000.f, 9.81f));
 		GetAnimator()->PlayAnim(L"Jiwoo_Right", true);
-	}
-	if (KEY_PRESS(KEY_TYPE::UP))
-	{
-		pRigid->AddForce(Vec2(0.f, -200.f));
-		GetAnimator()->PlayAnim(L"Jiwoo_Back", true);
-	}
-	if (KEY_PRESS(KEY_TYPE::DOWN))
-	{
-		pRigid->AddForce(Vec2(0.f, 200.f));
-		GetAnimator()->PlayAnim(L"Jiwoo_Front", true);
 	}
 	if(KEY_PRESS(KEY_TYPE::CTRL))
 		GetAnimator()->PlayAnim(L"Jiwoo_Attack", false, 1);
