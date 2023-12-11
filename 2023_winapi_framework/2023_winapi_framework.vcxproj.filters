@@ -38,9 +38,6 @@
     <Filter Include="Engine\05. Scene\MainScene">
       <UniqueIdentifier>{778388a4-812c-4f2f-bf25-b2a688d9477f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\04. Object\MainObject">
-      <UniqueIdentifier>{98af6e95-a7bc-4285-84a0-cb2e770cefa1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\06. Resource">
       <UniqueIdentifier>{baacb026-a0b3-4c36-87be-c02f2586d26b}</UniqueIdentifier>
     </Filter>
@@ -64,6 +61,12 @@
     </Filter>
     <Filter Include="Engine\04. Object\UI">
       <UniqueIdentifier>{b3708254-b85d-4a9e-af61-c5e09f6ea104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Blocks">
+      <UniqueIdentifier>{f2770e92-6ab7-49df-8543-0c3b050fd3e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\MainObject">
+      <UniqueIdentifier>{98af6e95-a7bc-4285-84a0-cb2e770cefa1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +160,19 @@
     <ClInclude Include="Rigidbody.h">
       <Filter>Engine\07. Component</Filter>
     </ClInclude>
+    <ClInclude Include="OperatingGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="DisappearGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -244,5 +260,18 @@
     <ClCompile Include="Rigidbody.cpp">
       <Filter>Engine\07. Component</Filter>
     </ClCompile>
+    <ClCompile Include="OperatingGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="DisappearGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp" />
   </ItemGroup>
 </Project>
