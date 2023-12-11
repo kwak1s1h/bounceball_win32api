@@ -38,6 +38,7 @@ void EventMgr::Excute(const tEvent& _eve)
 	case EVENT_TYPE::CREATE_OBJECT:
 		break;
 	case EVENT_TYPE::SCENE_CHANGE:
+		
 		break;
 	}
 }

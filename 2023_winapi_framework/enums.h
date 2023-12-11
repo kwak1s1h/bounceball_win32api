@@ -24,8 +24,9 @@ enum class OBJECT_GROUP
 {
 	DEFAULT,
 	PLAYER,
-	BULLET,
-	MONSTER,
+	GROUND,
+	OBSTACLE,
+	ITEM,
 	UI,
 	END = 30
 };
@@ -33,13 +34,13 @@ enum class OBJECT_GROUP
 enum class PEN_TYPE
 {
 	HOLLOW, RED, GREEN, 
-	BLUE, YELLOW, END
+	BLUE, YELLOW, GRAY, END
 };
 
 enum class BRUSH_TYPE
 {
 	HOLLOW, RED, GREEN,
-	BLUE, YELLOW, END
+	BLUE, YELLOW, GRAY, END
 };
 
 enum class EVENT_TYPE
@@ -47,5 +48,31 @@ enum class EVENT_TYPE
 	DELETE_OBJECT,
 	CREATE_OBJECT,
 	SCENE_CHANGE,
+	END
+};
+
+enum class GROUND_TYPE
+{
+	None,
+	DISAPPEAR,
+	BUTTON,
+	OPERATING,
+	END
+};
+
+enum class ITEM_TYPE
+{
+	DASH,
+	JUMP,
+	DEACTIVATION,
+	ACTIVATION,
+	STAR,
+	END
+};
+
+enum class OBSTACLE_TYPE
+{
+	SPIKE,
+	ELECTRIC,
 	END
 };
