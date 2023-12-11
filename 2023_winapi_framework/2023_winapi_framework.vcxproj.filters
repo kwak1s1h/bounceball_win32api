@@ -65,6 +65,9 @@
     <Filter Include="Engine\04. Object\UI">
       <UniqueIdentifier>{b3708254-b85d-4a9e-af61-c5e09f6ea104}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Blocks">
+      <UniqueIdentifier>{b784ae5b-b1df-470f-902a-0e75d64a3f8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -154,6 +157,19 @@
     <ClInclude Include="Button.h">
       <Filter>Engine\04. Object\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="DisappearGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatingGround.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -238,5 +254,18 @@
     <ClCompile Include="Button.cpp">
       <Filter>Engine\04. Object\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="DisappearGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatingGround.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp" />
   </ItemGroup>
 </Project>
