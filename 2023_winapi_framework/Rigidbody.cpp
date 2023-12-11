@@ -48,6 +48,8 @@ void Rigidbody::FinalUpdate()
 		m_vVelocity *= m_fMaxSpeed;
 	}
 
+	m_vVelocity.y += 9.81f * 0.5f;
+
 	Move();
 
 	m_vForce = Vec2(0.f, 0.f);
