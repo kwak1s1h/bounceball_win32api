@@ -13,6 +13,7 @@ public:
 	void SetMass(float _fMass) { m_fMass = _fMass; }
 	const float& GetMass() const { return m_fMass; }
 
+	const Vec2& GetVelocity() const { return m_vVelocity; }
 	void SetVelocity(Vec2 _v) { m_vVelocity = _v; };
 	void SetMaxVelocity(float _speed) { m_fMaxSpeed = _speed; };
 

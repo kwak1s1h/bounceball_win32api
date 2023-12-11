@@ -19,26 +19,28 @@ Player::Player()
 	//strFilePath += L"Texture\\plane.bmp";
 	//m_pTex->Load(strFilePath);
 	//m_pTex = ResMgr::GetInst()->TexLoad(L"Player", L"Texture\\plane.bmp");
-	m_pTex = ResMgr::GetInst()->TexLoad(L"Player", L"Texture\\jiwoo.bmp");
+	m_pTex = ResMgr::GetInst()->TexLoad(L"Player", L"Texture\\\Ball.bmp");
 	CreateCollider();
-	GetCollider()->SetScale(Vec2(20.f,30.f));
+	GetCollider()->SetScale(Vec2(50.f,50.f));
+	GetCollider()->SetOffSetPos(Vec2(-25.f, -25.f));
 	//GetCollider()->SetOffSetPos(Vec2(50.f,0.f));
 	
 	// 엉엉엉 내 20분 ㅠㅠㅠ ㅁ날어;ㅣ남러;ㅁ나얼
-	CreateAnimator();
-	GetAnimator()->CreateAnim(L"Jiwoo_Front", m_pTex,Vec2(0.f, 150.f),
-		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->CreateAnim(L"Jiwoo_Back", m_pTex, Vec2(0.f, 100.f),
-		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->CreateAnim(L"Jiwoo_Left", m_pTex, Vec2(0.f, 0.f),
-		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->CreateAnim(L"Jiwoo_Right", m_pTex, Vec2(0.f, 50.f),
-		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->CreateAnim(L"Jiwoo_Attack", m_pTex, Vec2(0.f, 200.f),
-		Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->PlayAnim(L"Jiwoo_Front",true);
+	//CreateAnimator();
+	//GetAnimator()->CreateAnim(L"Jiwoo_Front", m_pTex,Vec2(0.f, 150.f),
+	//	Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->CreateAnim(L"Jiwoo_Back", m_pTex, Vec2(0.f, 100.f),
+	//	Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->CreateAnim(L"Jiwoo_Left", m_pTex, Vec2(0.f, 0.f),
+	//	Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->CreateAnim(L"Jiwoo_Right", m_pTex, Vec2(0.f, 50.f),
+	//	Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->CreateAnim(L"Jiwoo_Attack", m_pTex, Vec2(0.f, 200.f),
+	//	Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->PlayAnim(L"Jiwoo_Front",true);
 
 	CreateRigidbody();
+	GetRigidbody()->SetMaxVelocity(1000.f);
 
 	//// 오프셋 건드리기
 	//Animation* pAnim = GetAnimator()->FindAnim(L"Jiwoo_Front");
@@ -61,25 +63,25 @@ void Player::Update()
 	if (KEY_PRESS(KEY_TYPE::LEFT))
 	{
 		pRigid->AddForce(Vec2(-1000.f, 9.81f));
-		GetAnimator()->PlayAnim(L"Jiwoo_Left", true);
+		//GetAnimator()->PlayAnim(L"Jiwoo_Left", true);
 	}
 	if (KEY_PRESS(KEY_TYPE::RIGHT))
 	{
 		pRigid->AddForce(Vec2(1000.f, 9.81f));
-		GetAnimator()->PlayAnim(L"Jiwoo_Right", true);
+		//GetAnimator()->PlayAnim(L"Jiwoo_Right", true);
 	}
-	if(KEY_PRESS(KEY_TYPE::CTRL))
-		GetAnimator()->PlayAnim(L"Jiwoo_Attack", false, 1);
+	//if(KEY_PRESS(KEY_TYPE::CTRL))
+		//GetAnimator()->PlayAnim(L"Jiwoo_Attack", false, 1);
 	//SetPos(vPos);
-	GetAnimator()->Update();
+	//GetAnimator()->Update();
 }
 
 void Player::Render(HDC _dc)
 {
-	//Vec2 vPos = GetPos();
-	//Vec2 vScale = GetScale();
-	//int Width = m_pTex->GetWidth();
-	//int Height = m_pTex->GetHeight();
+	Vec2 vPos = GetPos();
+	Vec2 vScale = GetScale();
+	int Width = m_pTex->GetWidth();
+	int Height = m_pTex->GetHeight();
 	//// 1. 기본 옮기기
 	//BitBlt(_dc
 	//	,(int)(vPos.x - vScale.x /2)
@@ -87,12 +89,12 @@ void Player::Render(HDC _dc)
 	//	, Width,Height, m_pTex->GetDC()
 	//	,0,0,SRCCOPY);
 
-	//// 2. 색상 걷어내기
-	//TransparentBlt(_dc
-	//	, (int)(vPos.x - vScale.x / 2)
-	//	, (int)(vPos.y - vScale.y / 2)
-	//	, Width, Height, m_pTex->GetDC()
-	//	, 0, 0, Width,Height, RGB(255,0,255));
+	// 2. 색상 걷어내기
+	TransparentBlt(_dc
+		, (int)(vPos.x - vScale.x / 2)
+		, (int)(vPos.y - vScale.y / 2)
+		, Width, Height, m_pTex->GetDC()
+		, 0, 0, Width,Height, RGB(255,0,255));
 
 	//// 3. 확대 및 축소
 	//StretchBlt(_dc
@@ -109,4 +111,11 @@ void Player::Render(HDC _dc)
 	//	, Width, Height, m_pTex->GetDC()
 	//	, 0, 0, Width, Height, RGB(255, 0, 255));
 	Component_Render(_dc);
+}
+
+void Player::EnterCollision(Collider* _pOther)
+{
+	Rigidbody* pRigid = GetRigidbody();
+	Vec2 velocity = pRigid->GetVelocity();
+	pRigid->AddForce({0.f, -velocity.y * 1000.f});
 }

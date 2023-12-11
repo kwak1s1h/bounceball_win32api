@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+class Texture;
 class Ground : public Object
 {
 public:
@@ -19,5 +20,6 @@ public:
 	Vec2 m_Scale;
 	//Rigidbody m_rb;
 	bool m_UseRigidbody;
+	Texture* m_pTex;
 };
 
