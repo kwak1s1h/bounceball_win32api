@@ -25,11 +25,11 @@ public:
 	const Vec2& GetScale() const { return m_vScale; }
 	Collider* GetCollider() const 
 	{ return m_pCollider; }
-	Animator* GetAnimator()
+	Animator* GetAnimator() const
 	{
 		return m_pAnimator;
 	}
-	Rigidbody* GetRigidbody()
+	Rigidbody* GetRigidbody() const
 	{
 		return m_pRigidbody;
 	}

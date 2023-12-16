@@ -115,7 +115,5 @@ void Player::Render(HDC _dc)
 
 void Player::EnterCollision(Collider* _pOther)
 {
-	Rigidbody* pRigid = GetRigidbody();
-	Vec2 velocity = pRigid->GetVelocity();
-	pRigid->AddForce({0.f, -velocity.y * 1000.f});
+	
 }

@@ -3,9 +3,10 @@
 #include "Collider.h"
 #include "ResMgr.h"
 #include "Texture.h"
+#include "Rigidbody.h"
 
 Ground::Ground()
-	:m_vColliderSize({ 60, 60 }),
+	:m_vColliderThickness({ 60, 60 }),
 	m_Scale({ 10, 10 }),
 	GroundType(GROUND_TYPE::None),
 	BlockType(OBJECT_GROUP::GROUND)
@@ -14,7 +15,7 @@ Ground::Ground()
 	m_pTex = ResMgr::GetInst()->TexLoad(L"Ground", L"Texture\\\Ground.bmp");
 	CreateCollider();
 	GetCollider()->SetOffSetPos({ -20.f, -20.f });
-	GetCollider()->SetScale(m_vColliderSize);
+	GetCollider()->SetScale(m_vColliderThickness);
 }
 
 Ground::~Ground()
@@ -38,4 +39,13 @@ void Ground::Render(HDC _dc)
 
 void Ground::Update()
 {
+}
+
+void Ground::EnterCollision(Collider* _pOther)
+{
+	Rigidbody* pOtherRigid = _pOther->GetObj()->GetRigidbody();
+	if (pOtherRigid != nullptr)
+	{
+		pOtherRigid->AddForce();
+	}
 }

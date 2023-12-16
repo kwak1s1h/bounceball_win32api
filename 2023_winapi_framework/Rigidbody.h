@@ -8,7 +8,7 @@ public:
 
 	void FinalUpdate();
 
-	void AddForce(const Vec2 _vF) { m_vForce = m_vForce + _vF; }
+	void AddForce(const Vec2 _vF) { m_vForce += _vF; }
 
 	void SetMass(float _fMass) { m_fMass = _fMass; }
 	const float& GetMass() const { return m_fMass; }
