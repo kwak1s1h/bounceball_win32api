@@ -68,6 +68,9 @@
     <Filter Include="Engine\04. Object\MainObject">
       <UniqueIdentifier>{98af6e95-a7bc-4285-84a0-cb2e770cefa1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\GameManger">
+      <UniqueIdentifier>{c5910fd5-60f3-447b-9d13-9e2ef085a9a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -172,7 +175,18 @@
     <ClInclude Include="Ground.h">
       <Filter>Engine\04. Object\Blocks</Filter>
     </ClInclude>
-    <ClInclude Include="Platform.h" />
+    <ClInclude Include="Stage1_Scene.h">
+      <Filter>Engine\05. Scene\MainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StarItem.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMgr.h">
+      <Filter>Engine\03. Manager\GameManger</Filter>
+    </ClInclude>
+    <ClInclude Include="ElectricObstacle.h">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -272,6 +286,17 @@
     <ClCompile Include="Ground.cpp">
       <Filter>Engine\04. Object\Blocks</Filter>
     </ClCompile>
-    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Stage1_Scene.cpp">
+      <Filter>Engine\05. Scene\MainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StarItem.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMgr.cpp">
+      <Filter>Engine\03. Manager\GameManger</Filter>
+    </ClCompile>
+    <ClCompile Include="ElectricObstacle.cpp">
+      <Filter>Engine\04. Object\Blocks</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

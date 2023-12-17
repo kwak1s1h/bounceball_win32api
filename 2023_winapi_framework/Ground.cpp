@@ -1,10 +1,14 @@
 #include "pch.h"
 #include "Ground.h"
+#include "Texture.h"
+#include "PathMgr.h"
 #include "Collider.h"
+#include "ResMgr.h"
 
 Ground::Ground()
-	:m_vColliderSize({ 10, 10 }),
-	m_Scale({ 10, 10 }),
+	:m_vColliderSize({ 60, 60 }),
+	m_pTex(nullptr),
+	m_Scale({ 60, 60 }),
 	GroundType(GROUND_TYPE::None),
 	BlockType(OBJECT_GROUP::GROUND)
 {
@@ -19,7 +23,6 @@ Ground::~Ground()
 
 void Ground::Render(HDC _dc)
 {
-	RECT_RENDER(m_vPos.x, m_vPos.y, m_vScale.x, m_vScale.y, _dc);
 }
 
 void Ground::Update()

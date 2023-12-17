@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "EventMgr.h"
+#include "GameMgr.h"
 #include "Object.h"
 void EventMgr::Update()
 {
@@ -24,12 +25,38 @@ void EventMgr::DeleteObject(Object* _pObj)
 	m_vecEvent.push_back(eve);
 }
 
+void EventMgr::ActiveBtn(Object* _pObj) {
+	tEvent eve = {};
+	eve.eEve = EVENT_TYPE::ACTIVE_BTN;
+	eve.Obj = _pObj;
+	m_vecEvent.push_back(eve);
+}
+
+void EventMgr::CollectStar(Object* _pObj)
+{
+	tEvent eve = {};
+	eve.eEve = EVENT_TYPE::COLLECT_STAR;
+	eve.Obj = _pObj;
+	m_vecEvent.push_back(eve);
+}
+
 void EventMgr::Excute(const tEvent& _eve)
 {
 	switch (_eve.eEve)
 	{
 	case EVENT_TYPE::DELETE_OBJECT:
 	{
+		Object* pDeadObj = _eve.Obj;
+		pDeadObj->SetDead();
+		m_vecDead.push_back(pDeadObj);
+	}
+		break;
+	case EVENT_TYPE::ACTIVE_BTN: {
+		GameMgr::GetInst()->ActivateBtnBlock();
+	}
+		break;
+	case EVENT_TYPE::COLLECT_STAR: {
+		GameMgr::GetInst()->DiscountStar();
 		Object* pDeadObj = _eve.Obj;
 		pDeadObj->SetDead();
 		m_vecDead.push_back(pDeadObj);

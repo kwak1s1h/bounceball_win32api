@@ -12,6 +12,8 @@ class EventMgr
 public:
 	void Update();
 	void DeleteObject(Object* _pObj);
+	void ActiveBtn(Object* _pObj);
+	void CollectStar(Object* _pObj);
 private:
 	void Excute(const tEvent& _eve);
 private:

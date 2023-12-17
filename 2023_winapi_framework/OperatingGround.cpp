@@ -2,13 +2,12 @@
 #include "OperatingGround.h"
 #include "Collider.h"
 #include "Object.h"
-#include "EventMgr.h"
+#include "GameMgr.h"
 #include "Core.h"
 
 OperatingGround::OperatingGround()
-	: isActive(false),
-	m_vColliderSize({ 10, 10 }),
-	m_Scale({ 10, 10 }),
+	:m_vColliderSize({ 60, 60 }),
+	m_Scale({ 60, 60 }),
 	GroundType(GROUND_TYPE::OPERATING),
 	BlockType(OBJECT_GROUP::GROUND)
 {
@@ -23,8 +22,15 @@ OperatingGround::~OperatingGround()
 
 void OperatingGround::Render(HDC _dc)
 {
-	if (!isActive) {
+	
+}
+
+void OperatingGround::Update()
+{
+	if (GameMgr::GetInst()->GetBtnActive() == false) {
+		m_pCollider->SetScale({ 0, 0 });
 	}
-	if (isActive) {
+	if (GameMgr::GetInst()->GetBtnActive() == true) {
+		m_pCollider->SetScale(m_vColliderSize);
 	}
 }

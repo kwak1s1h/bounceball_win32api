@@ -5,9 +5,8 @@
 #include "EventMgr.h"
 
 ButtonGround::ButtonGround()
-	: isActive(false),
-	m_vColliderSize({ 11, 11 }),
-	m_Scale({ 10, 10 }),
+	:m_vColliderSize({ 60, 60 }),
+	m_Scale({ 60, 60 }),
 	GroundType(GROUND_TYPE::BUTTON),
 	BlockType(OBJECT_GROUP::GROUND)
 {
@@ -29,7 +28,7 @@ void ButtonGround::EnterCollision(Collider* _pOther)
 {
 	const Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"Player") {
-		isActive = !isActive;
+		EventMgr::GetInst()->ActiveBtn(this);
 	}
 }
 
@@ -38,5 +37,9 @@ void ButtonGround::StayCollision(Collider* _pOther)
 }
 
 void ButtonGround::ExitCollision(Collider* _pOther)
+{
+}
+
+void ButtonGround::Update()
 {
 }

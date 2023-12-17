@@ -182,9 +182,11 @@
     <ClInclude Include="Core.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="DisappearGround.h" />
+    <ClInclude Include="ElectricObstacle.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Game_Scene.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -192,7 +194,6 @@
     <ClInclude Include="OperatingGround.h" />
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Res.h" />
     <ClInclude Include="ResMgr.h" />
@@ -201,6 +202,8 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SelectGDI.h" />
+    <ClInclude Include="Stage1_Scene.h" />
+    <ClInclude Include="StarItem.h" />
     <ClInclude Include="Start_Scene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
@@ -217,11 +220,14 @@
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DisappearGround.cpp" />
+    <ClCompile Include="ElectricObstacle.cpp" />
     <ClCompile Include="EventMgr.cpp" />
+    <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="OperatingGround.cpp" />
-    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="Stage1_Scene.cpp" />
+    <ClCompile Include="StarItem.cpp" />
     <ClCompile Include="Start_Scene.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />

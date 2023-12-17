@@ -5,8 +5,8 @@
 #include "Object.h"
 
 DisappearGround::DisappearGround():
-	m_vColliderSize({ 11, 11 }),
-	m_Scale({ 10, 10 }),
+	m_vColliderSize({ 56, 56 }),
+	m_Scale({ 60, 60 }),
 	GroundType(GROUND_TYPE::DISAPPEAR),
 	BlockType(OBJECT_GROUP::GROUND)
 {
@@ -38,4 +38,8 @@ void DisappearGround::ExitCollision(Collider* _pOther)
 	if (pOtherObj->GetName() == L"Player") {
 		EventMgr::GetInst()->DeleteObject(this);
 	}
+}
+
+void DisappearGround::Update()
+{
 }
